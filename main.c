@@ -6,9 +6,11 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/17 16:00:12 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/18 17:12:37 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 int main(int argc, char **argv)
 {

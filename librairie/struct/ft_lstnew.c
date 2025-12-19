@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 17:32:30 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 17:43:38 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/16 17:18:04 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 14:45:52 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+t_stack *ft_lstnew(void *content)
 {
-    new->next = *lst;
-
-    *lst = new;
+    t_stack *elem;
+    
+    elem = malloc(sizeof(t_stack));
+    if(!elem)
+        return(NULL);
+    elem->content = content;
+    elem->next = NULL;
+    return(elem);
 }

@@ -6,16 +6,16 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:45:13 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 18:46:48 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:45:50 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_stack *ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *))
 {
-    t_list *new_list;
-    t_list *new_obj;
+    t_stack *new_list;
+    t_stack *new_obj;
     
     if (!lst || !f || !del)
         return (NULL);

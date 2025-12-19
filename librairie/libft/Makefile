@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/15 16:57:19 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/16 19:01:21 by adakhama         ###   ########.fr        #
+#    Updated: 2025/10/29 13:52:09 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,7 @@ SRC = ft_isdigit.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
 	ft_striteri.c\
-	ft_strmapi.c\
-	ft_listiter.c\
-	ft_lstadd_back.c\
-	ft_lstadd_front.c\
-	ft_lstclear.c\
-	ft_lstdelone.c\
-	ft_lstlast.c\
-	ft_lstmap.c\
-	ft_lstnew.c\
-	ft_lstsize.c
+	ft_strmapi.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/18 17:08:05 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:59:05 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int ft_checker(char **tab)
 		j = 0;
 		while(tab[i][j])
 		{
-			if (j > 0 && tab[i][j] > '9' && tab [i][j] < '0')
+			if (j > 0 && !ft_isdigit(ft_atoi(&tab[i][j])))
 				return (0);
-			if (j == 0 && tab[i][j] > '9' && tab [i][j] < '0' 
-				&& tab [i][j] != '+' && tab [i][j] != '-')
+			if (j == 0 && (!ft_isdigit(ft_atoi(&tab[i][j]))
+				|| (tab [i][j] != '+' || tab [i][j] != '-')))
 				return (0);
 			j++;
 		}
@@ -35,13 +35,13 @@ int ft_checker(char **tab)
 	return (1);
 }
 
-void	ft_add_nodd(char *str, t_list *stack)
+void	ft_add_nodd(char *str, t_stack *stack)
 {
 	ft_lstadd_back(&stack, ft_lstnew((void*)str));
 	stack = stack->next;
 }
 
-int	ft_parser(char **argv, int argc, t_list *stack)
+int	ft_parser(char **argv, int argc, t_stack *stack)
 {
 	char **tab;
 	int	i;
@@ -58,4 +58,5 @@ int	ft_parser(char **argv, int argc, t_list *stack)
 	i = 0;
 	while(tab[i])
 		free(tab[i++]);
+	return	(1);
 }

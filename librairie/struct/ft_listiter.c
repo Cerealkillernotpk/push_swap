@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_listiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 18:11:01 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 18:27:58 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/16 18:43:22 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 14:43:06 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void ft_lstiter(t_stack *lst, void (*f)(void *))
 {
-    t_list *last;
-
-    last = ft_lstlast(*lst);
-    if(!last)
-        *lst = new;
-    last->next = new;
+    t_stack *tmp;
+    
+    tmp = lst;
+    while (tmp)
+    {
+        f(tmp->content);
+        tmp = tmp->next;
+    }
 }

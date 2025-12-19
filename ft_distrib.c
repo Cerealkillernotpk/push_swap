@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:00:00 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/18 15:50:49 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:00:18 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_distrib(char **argv, int argc)
 {
 	int	i;
-	t_list stack;
+	t_stack stack;
 	
 	i = 0;
 	while(i < argc)
@@ -24,9 +24,10 @@ char	*ft_distrib(char **argv, int argc)
 		if (!stack.error)
 			return (NULL);
 	}
+	return(NULL);
 }
 
-// t_list stack;
+// t_stack stack;
 // int i =1;
 // char **tab
 

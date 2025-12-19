@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 18:32:19 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 19:11:47 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/16 17:44:24 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 14:45:46 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+t_stack *ft_lstlast(t_stack *lst)
 {
-    t_list *tmp;
-    while (*lst)
-    {
-        tmp = (*lst)->next;
-        ft_lstdelone(*lst, del);
-        *lst = tmp;
-    }
-    free(*lst);
-    *lst = NULL;
+    t_stack *tmp;
+    
+    if(!lst)
+        return(NULL);
+    tmp = lst;
+    while (tmp->next)
+        tmp = tmp->next;
+    return(tmp);
 }

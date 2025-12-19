@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/18 15:42:28 by adakhama         ###   ########.fr        #
+#    Updated: 2025/12/19 15:06:49 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,17 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = push_swap
 
-SRC =	ft_parser.c\
-		ft_distrib.c
+SRC =	ft_parser.c \
+		ft_distrib.c \
+		librairie/struct/ft_listiter.c \
+		librairie/struct/ft_lstadd_back.c \
+		librairie/struct/ft_lstadd_front.c \
+		librairie/struct/ft_lstclear.c \
+		librairie/struct/ft_lstdelone.c \
+		librairie/struct/ft_lstlast.c \
+		librairie/struct/ft_lstmap.c \
+		librairie/struct/ft_lstnew.c \
+		librairie/struct/ft_lstsize.c
 	
 OBJ = $(SRC:.c=.o) $(PRINTF:.c=.o)
 

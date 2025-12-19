@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 17:44:24 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 18:18:52 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/16 18:28:53 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 14:45:10 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-t_list *ft_lstlast(t_list *lst)
+void ft_lstdelone(t_stack *lst, void (*del)(void*))
 {
-    t_list *tmp;
-    
-    if(!lst)
-        return(NULL);
-    tmp = lst;
-    while (tmp->next)
-        tmp = tmp->next;
-    return(tmp);
+    del(lst->content);
+    free(lst);
 }

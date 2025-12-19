@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/18 15:51:37 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 14:52:54 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,29 @@
 # include "printf.h"
 # include "libft.h"
 
-typedef struct s_list
+typedef struct s_stack
 {
 	int 			nbr;
 	int				error;
-	struct s_list	*next;
-} t_list;
+	void            *content;
+	struct s_stack	*next;
+} t_stack;
+
+/*Fonction parser*/
 
 char	*ft_distrib(char **argv, int argc);
-int		ft_parser(char **argv, int argc, t_list *stack);
+int		ft_parser(char **argv, int argc, t_stack *stack);
+
+/*Librairie fonction de struct*/
+
+void	ft_lstiter(t_stack *lst, void (*f)(void *));
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
+void	ft_lstadd_front(t_stack **lst, t_stack *new);
+void	ft_lstclear(t_stack **lst, void (*del)(void *));
+void	ft_lstdelone(t_stack *lst, void (*del)(void*));
+t_stack	*ft_lstlast(t_stack *lst);
+t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
+t_stack	*ft_lstnew(void *content);
+int		ft_lstsize(t_stack *lst);
 
 #endif

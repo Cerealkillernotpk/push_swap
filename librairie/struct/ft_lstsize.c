@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listiter.c                                      :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 18:43:22 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/16 18:44:54 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/16 17:38:04 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 14:45:55 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../push_swap.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+int ft_lstsize(t_stack *lst)
 {
-    t_list *tmp;
-    
+    t_stack *tmp;
+    int i;
+
+    if (!lst)
+        return(0);
     tmp = lst;
+    i = 0;
     while (tmp)
     {
-        f(tmp->content);
         tmp = tmp->next;
+        i++;
     }
+    return(i);
 }

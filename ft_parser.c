@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:59:05 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:19:40 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int ft_checker(char **tab)
 
 void	ft_add_nodd(char *str, t_stack *stack)
 {
-	ft_lstadd_back(&stack, ft_lstnew((void*)str));
+	ft_lstadd_back(&stack, ft_lstnew_nbr(ft_atoi(str)));
 	stack = stack->next;
 }
 

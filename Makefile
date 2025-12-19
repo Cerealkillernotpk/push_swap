@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/19 15:06:49 by adakhama         ###   ########.fr        #
+#    Updated: 2025/12/19 15:11:09 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC =	ft_parser.c \
 		librairie/struct/ft_lstlast.c \
 		librairie/struct/ft_lstmap.c \
 		librairie/struct/ft_lstnew.c \
-		librairie/struct/ft_lstsize.c
+		librairie/struct/ft_lstsize.c \
+		librairie/struct/ft_lstnew_nbr\
 	
 OBJ = $(SRC:.c=.o) $(PRINTF:.c=.o)
 

@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tes.c                                              :+:      :+:    :+:   */
+/*   ft_lstnew_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 16:52:42 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 15:19:01 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/19 15:09:50 by adakhama          #+#    #+#             */
+/*   Updated: 2025/12/19 15:13:50 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "push_swap.h"
+#include "../../push_swap.h"
 
-// void func(t_ *info)
-// {
-//     printf("%i", info->ind);
-//     return ;
-// }
-
-// #include <stdio.h>
-// int main()
-// {
-//     t_stack info;
-//     t_stack info2;
-//     t_stack tmp;
-
-//     tmp = info;
-//     while (tmp.next)
-//         tmp = tmp->next;
-//     info.next = &info2;
-//     info.nbr = 0;
-//     func(&info);
-// }
+t_stack *ft_lstnew_nbr(int nbr)
+{
+    t_stack *elem;
+    
+    elem = malloc(sizeof(t_stack));
+    if(!elem)
+        return(NULL);
+    elem->nbr = nbr;
+    elem->next = NULL;
+    return(elem);
+}

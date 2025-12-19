@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:52:54 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 15:17:20 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "printf.h"
-# include "libft.h"
+# include "librairie/libft/libft.h"
 
 typedef struct s_stack
 {
@@ -42,5 +42,6 @@ t_stack	*ft_lstlast(t_stack *lst);
 t_stack	*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
 t_stack	*ft_lstnew(void *content);
 int		ft_lstsize(t_stack *lst);
+t_stack	*ft_lstnew_nbr(int content);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 15:19:40 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:53:55 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	ft_parser(char **argv, int argc, t_stack *stack)
 	char **tab;
 	int	i;
 	
+	(void) stack;
 	if 	(argc == 2)
 		tab = ft_split(argv[1], ' ');
 	else
@@ -53,9 +54,9 @@ int	ft_parser(char **argv, int argc, t_stack *stack)
 	if (ft_checker(tab) == 0)
 		return (0);
 	i = 0;
-	while (tab[i])
-		ft_add_nodd(tab[i++], stack);
-	i = 0;
+	// while (tab[i])
+	// 	ft_add_nodd(tab[i++], stack);
+	// i = 0;
 	while(tab[i])
 		free(tab[i++]);
 	return	(1);

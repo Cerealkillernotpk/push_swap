@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 15:17:20 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/19 16:02:28 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "printf.h"
-# include "librairie/libft/libft.h"
+# include "ft_printf.h"
+# include "libft.h"
 
 typedef struct s_stack
 {

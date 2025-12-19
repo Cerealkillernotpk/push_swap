@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/19 15:11:09 by adakhama         ###   ########.fr        #
+#    Updated: 2025/12/19 17:03:08 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = push_swap
 
-SRC =	ft_parser.c \
+SRC =	main.c \
+		ft_parser.c \
 		ft_distrib.c \
 		librairie/struct/ft_listiter.c \
 		librairie/struct/ft_lstadd_back.c \
@@ -27,16 +28,16 @@ SRC =	ft_parser.c \
 		librairie/struct/ft_lstmap.c \
 		librairie/struct/ft_lstnew.c \
 		librairie/struct/ft_lstsize.c \
-		librairie/struct/ft_lstnew_nbr\
+		librairie/struct/ft_lstnew_nbr.c
 	
-OBJ = $(SRC:.c=.o) $(PRINTF:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):$(OBJ)
 	make -C librairie/printf -s
 	make -C librairie/libft -s
-	cc -o $(NAME) $(OBJ) $(CFLAGS)
+	cc -o $(NAME) $(OBJ) $(CFLAGS) -Llibrairie/libft -Llibrairie/printf -l:libft.a -l:libftprintf.a
 
 %.o:%.c
 	$(CC) $(CFLAGS) $< -c -o $@ -I librairie/libft -I librairie/printf

@@ -6,41 +6,47 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 19:27:36 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:01:15 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_verif(t_stack stack_a)
+int	ft_verif_repetition(char *str, t_stack *stack_a)
 {
-    while (stack_a)
-    {
-        
-    }
+	while (stack_a)
+	{
+		if (str == stack_a->content)
+			return(0);
+		stack_a = stack_a->next;
+	}
+	return(1);
 }
-
-int ft_verif_repetition(char**argv)
-{}
 int ft_verif_number(char *array)
 {
 	int i;
-	int j;
 
 	i = 0;
+	if (!ft_isdigit(array[i]) && array [i] != '+' && array [i] != '-')
+		return (0);
 	while (array[i])
 	{
 		ft_printf("%s\n", array[i]);
-		j = 0;
-		if (!ft_isdigit(array[i][j]) && array [i][j] != '+' && array [i][j] != '-')
-				return (0);
-		while(array[i][j])
-		{
-			if (j > 0 && ft_isdigit(array[i][j]) == 0)
-				return (0);
-			j++;
-		}
+		if (i > 0 && ft_isdigit(array[i]) == 0)
+			return (0);
 		i++;
 	}
 	return (1);
+}
+int ft_verif(t_stack *stack_a)
+{
+    while (stack_a)
+    {
+		if (!ft_verif_number(stack_a->content))
+			return(0);
+		if (ft_verif_repetition(stack_a->content, stack_a))
+			return(0);
+        stack_a = stack_a->next;
+    }
+	return(1);
 }

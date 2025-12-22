@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 19:24:46 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:01:44 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ typedef struct s_stack
 /*Fonction parser*/
 
 char	*ft_distrib(char **argv, int argc);
-int		ft_parser(char **argv, int argc, t_stack *stack);
-int		ft_fill_stack(char **argv, int argc);
-int		ft_verif(t_stack stack_a);
+int		ft_parser(char **argv, int argc);
+void	ft_fill_stack(char **argv, int argc, t_stack *stack_a);
+int		ft_verif(t_stack *stack_a);
 
 /*Librairie fonction de struct*/
 

@@ -6,18 +6,18 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 19:26:35 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:00:23 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_add_node(char *str, t_stack stack)
+void	ft_add_node(char *str, t_stack *stack)
 {
 	ft_lstadd_back(&stack, ft_lstnew(str));
 }
 
-void	ft_multiple_arg(char**argv, t_stack stack_a, int j)
+void	ft_multiple_arg(char**argv, t_stack *stack_a, int j)
 {
 	int k;
 	char** tmp;
@@ -41,7 +41,7 @@ void	ft_multiple_arg(char**argv, t_stack stack_a, int j)
 	}
 }
 
-void	ft_fill_stack(char **argv, int argc, t_stack stack_a)
+void	ft_fill_stack(char **argv, int argc, t_stack *stack_a)
 {
 	char** tmp;
 	int	i;
@@ -49,6 +49,7 @@ void	ft_fill_stack(char **argv, int argc, t_stack stack_a)
 	
 	i = 0;
 	j = 0;
+	tmp = NULL;
 	if 	(argc == 2)
 		tmp = ft_split(argv[1], ' ');
 	else if (argc > 2)
@@ -60,7 +61,7 @@ void	ft_fill_stack(char **argv, int argc, t_stack stack_a)
 		}
 	}
 	else
-		stack_a.error = 0;
+		stack_a->error = 0;
 	while (tmp[i])
 	{
 		ft_add_node(tmp[i++], stack_a);

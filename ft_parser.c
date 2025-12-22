@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 19:23:29 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:02:14 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,19 @@
 // }
 int	ft_parser(char **argv, int argc)
 {
-	t_stack stack_a;
+	t_stack *stack_a;
 	
-	ft_fill_stack(argv, argc);
-	if (stack_a.error == 1)
+	stack_a = NULL;
+	ft_fill_stack(argv, argc, stack_a);
+	if (stack_a->error == 1)
 		return(0);
 	if (ft_verif(stack_a) == 0)
 		return (0);
+	while (stack_a)
+    {
+		stack_a->nbr = ft_atoi(stack_a->content);
+		ft_printf("%d", stack_a->nbr);
+        stack_a = stack_a->next;
+    }
 	return	(1);
 }

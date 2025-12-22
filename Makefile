@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/19 17:03:08 by adakhama         ###   ########.fr        #
+#    Updated: 2025/12/22 19:54:55 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME = push_swap
 
 SRC =	main.c \
 		ft_parser.c \
-		ft_distrib.c \
+		ft_fill_struct.c \
+		parser_verif.c \
 		librairie/struct/ft_listiter.c \
 		librairie/struct/ft_lstadd_back.c \
 		librairie/struct/ft_lstadd_front.c \

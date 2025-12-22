@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 20:02:14 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/22 20:15:56 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,12 @@ int	ft_parser(char **argv, int argc)
 		return (0);
 	while (stack_a)
     {
+		stack_a->nbr = malloc(ft_strlen(stack_a->content)*sizeof(int));
 		stack_a->nbr = ft_atoi(stack_a->content);
+		stack_a->content = NULL;
+		free(stack_a->content);
 		ft_printf("%d", stack_a->nbr);
         stack_a = stack_a->next;
     }
-	return	(1);
+	return (1);
 }

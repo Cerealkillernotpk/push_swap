@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:46:39 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 20:15:56 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:51:15 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,24 +74,22 @@
 // 	ft_free_tab(tab, i, argc);
 // 	return	(1);
 // }
-int	ft_parser(char **argv, int argc)
-{
-	t_stack *stack_a;
+// int	ft_parser(char **argv, int argc)
+// {
+// 	t_stack *stack_a;
 	
-	stack_a = NULL;
-	ft_fill_stack(argv, argc, stack_a);
-	if (stack_a->error == 1)
-		return(0);
-	if (ft_verif(stack_a) == 0)
-		return (0);
-	while (stack_a)
-    {
-		stack_a->nbr = malloc(ft_strlen(stack_a->content)*sizeof(int));
-		stack_a->nbr = ft_atoi(stack_a->content);
-		stack_a->content = NULL;
-		free(stack_a->content);
-		ft_printf("%d", stack_a->nbr);
-        stack_a = stack_a->next;
-    }
-	return (1);
-}
+// 	stack_a = NULL;
+// 	// stack_a->error = 0;
+// 	ft_fill_stack(argv, argc, stack_a);
+// 	// if (stack_a->error == 1)
+// 	// 	return(0);
+// 	if (ft_verif(stack_a) == 0)
+// 		return (0);
+// 	while (stack_a)
+//     {
+// 		stack_a->nbr = ft_atoi(stack_a->content);
+// 		ft_printf("%d", stack_a->nbr);
+//         stack_a = stack_a->next;
+//     }
+// 	return (1);
+// }

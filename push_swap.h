@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 20:01:44 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 19:00:25 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "ft_printf.h"
-# include "libft.h"
+# include "librairie/printf/ft_printf.h"
+# include "librairie/libft/libft.h"
 
 typedef struct s_stack
 {
@@ -30,8 +30,9 @@ typedef struct s_stack
 
 char	*ft_distrib(char **argv, int argc);
 int		ft_parser(char **argv, int argc);
-void	ft_fill_stack(char **argv, int argc, t_stack *stack_a);
+void	ft_fill_stack(char **argv, int argc, t_stack **stack_a);
 int		ft_verif(t_stack *stack_a);
+void	ft_add_node(char *str, t_stack **stack);
 
 /*Librairie fonction de struct*/
 

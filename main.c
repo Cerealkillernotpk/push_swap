@@ -6,11 +6,36 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 19:52:13 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 19:36:36 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_tmp(void *content)
+{
+	ft_printf("%s\n", content);
+}
+
+int	ft_parser(char **argv, int argc)
+{
+	t_stack *stack_a;
+	
+	stack_a = NULL;
+	ft_fill_stack(argv, argc, &stack_a);
+	if (stack_a->error == 1)
+		return(0);
+    ft_lstiter(stack_a, ft_tmp);
+	if (ft_verif(stack_a) == 0)
+		return (0);
+	while (stack_a->content)
+    {
+		stack_a->nbr = ft_atoi(stack_a->content);
+		ft_printf("%d", stack_a->nbr);
+        stack_a = stack_a->next;
+    }
+	return (1);
+}
 
 int main(int argc, char **argv)
 {
@@ -19,9 +44,23 @@ int main(int argc, char **argv)
     
     j = 1;
     i = ft_parser(argv, argc);
-    // while(argv[j])
-    // {
-    //     ft_printf("%s \n", argv[j++]);
-    // }
     ft_printf("verif = %d", i);
 }
+// int main()
+// {
+//     t_stack *stack;
+//     char    *str;
+//     int     i;
+    
+//     stack = malloc(sizeof(t_stack));
+//     stack->next = NULL;
+//     str = NULL;
+//     i = 0;
+//     (void)i;
+//     str = "jesuistonpere";
+//     stack->content = 0;
+//     ft_add_node(str, stack);
+//     ft_printf("%s", stack->content);
+//     stack=stack->next;
+//     ft_printf("%s", stack->content);
+// }

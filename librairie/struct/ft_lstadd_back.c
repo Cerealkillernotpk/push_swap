@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:11:01 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:45:33 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:14:18 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void ft_lstadd_back(t_stack **lst, t_stack *new)
     last = ft_lstlast(*lst);
     if(!last)
         *lst = new;
-    last->next = new;
+    else
+        last->next = new;
 }

@@ -6,22 +6,33 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/22 20:14:01 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 19:45:36 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_add_node(char *str, t_stack *stack)
+void ft_add_node(char *str, t_stack **stack_a)
 {
-	ft_lstadd_back(&stack, ft_lstnew(str));
-}
+	t_stack *stack = *stack_a;
 
-void	ft_multiple_arg(char**argv, t_stack *stack_a, int j)
+	if (ft_lstsize(stack) == 0)
+	{
+		*stack_a = ft_lstnew(str);
+		(*stack_a)->error = 0;
+	}
+	else
+	{
+		ft_lstadd_back(stack_a, ft_lstnew(str));
+		if (!stack)
+			stack->error = 1;
+	}
+}
+void ft_multiple_arg(char **argv, t_stack **stack_a, int j)
 {
 	int k;
-	char** tmp;
-	
+	char **tmp;
+
 	k = 0;
 	if (ft_split(argv[j], ' '))
 	{
@@ -33,38 +44,37 @@ void	ft_multiple_arg(char**argv, t_stack *stack_a, int j)
 		ft_add_node(argv[j], stack_a);
 	k = 0;
 	if (ft_split(argv[j], ' '))
-	{
-		while (tmp [k])
-		{
-			free(tmp[k++]);
-		}
-	}
+		free(tmp);
 }
 
-void	ft_fill_stack(char **argv, int argc, t_stack *stack_a)
+void ft_single_arg(char **argv, t_stack **stack_a)
 {
-	char** tmp;
-	int	i;
-	int	j;
-	
+	char **tmp;
+	int i;
+
 	i = 0;
+	tmp = ft_split(argv[1], ' ');
+	while (tmp[i])
+		ft_add_node(tmp[i++], stack_a);
+	i = 0;
+	free(tmp);
+}
+
+void ft_fill_stack(char **argv, int argc, t_stack **stack_a)
+{
+	int j;
+
 	j = 0;
-	tmp = NULL;
-	if 	(argc == 2)
-		tmp = ft_split(argv[1], ' ');
+	if (argc == 2)
+		ft_single_arg(argv, stack_a);
 	else if (argc > 2)
 	{
-		while(argv[j])
+		while (argv[j])
 		{
 			ft_multiple_arg(argv, stack_a, j);
 			j++;
 		}
 	}
 	else
-		stack_a->error = 0;
-	while (tmp[i])
-	{
-		ft_add_node(tmp[i++], stack_a);
-		free(tmp[i]);
-	}
+		(*stack_a)->error = 1;
 }

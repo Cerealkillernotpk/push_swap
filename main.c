@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 21:56:03 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 23:56:43 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,50 +17,42 @@ void ft_tmp(void *content)
 	ft_printf("check 1 : %s\n", content);
 }
 
-int	ft_parser(char **argv, int argc)
+int *ft_affect(t_stack	*stack_a)
+{
+	int *tmp;
+
+	tmp = malloc(sizeof(int));
+	*tmp = ft_atoi(stack_a->content);
+	free(stack_a->content);
+	return (tmp);
+}
+
+int ft_parser(char **argv, int argc)
 {
 	t_stack *stack_a;
-	
+	int verif;
+
 	stack_a = NULL;
-	ft_fill_stack(argv, argc, &stack_a);
-	if (stack_a->error == 1)
-		return(0);
-    ft_lstiter(stack_a, ft_tmp);
+	verif = ft_fill_stack(argv, argc, &stack_a);
+	if (verif == 0)
+		return (0);
 	if (ft_verif(stack_a) == 0)
 		return (0);
 	while (stack_a)
-    {
-		stack_a->nbr = ft_atoi(stack_a->content);
-		ft_printf("check 2 : %d\n", stack_a->nbr);
-        stack_a = stack_a->next;
-    }
+	{
+		stack_a->content = ft_affect(stack_a);
+		ft_printf("check : %d\n", *(int *)(stack_a->content));
+		stack_a = stack_a->next;
+	}
 	return (1);
 }
 
 int main(int argc, char **argv)
 {
-    int i;
-    int j;
-    
-    j = 1;
-    i = ft_parser(argv, argc);
-    ft_printf("verif = %d", i);
+	int i;
+	int j;
+
+	j = 1;
+	i = ft_parser(argv, argc);
+	ft_printf("verif = %d", i);
 }
-// int main()
-// {
-//     t_stack *stack;
-//     char    *str;
-//     int     i;
-    
-//     stack = malloc(sizeof(t_stack));
-//     stack->next = NULL;
-//     str = NULL;
-//     i = 0;
-//     (void)i;
-//     str = "jesuistonpere";
-//     stack->content = 0;
-//     ft_add_node(str, stack);
-//     ft_printf("%s", stack->content);
-//     stack=stack->next;
-//     ft_printf("%s", stack->content);
-// }

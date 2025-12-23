@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 21:57:38 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 23:34:33 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,10 @@
 
 void ft_add_node(char *str, t_stack **stack_a)
 {
-	t_stack *stack = *stack_a;
-
-	if (ft_lstsize(stack) == 0)
-	{
+	if (ft_lstsize(*stack_a) == 0)
 		*stack_a = ft_lstnew(str);
-		(*stack_a)->error = 0;
-	}
 	else
-	{
 		ft_lstadd_back(stack_a, ft_lstnew(str));
-		if (!stack)
-			stack->error = 1;
-	}
 }
 void ft_multiple_arg(char **argv, t_stack **stack_a, int j)
 {
@@ -60,7 +51,7 @@ void ft_single_arg(char **argv, t_stack **stack_a)
 	free(tmp);
 }
 
-void ft_fill_stack(char **argv, int argc, t_stack **stack_a)
+int	ft_fill_stack(char **argv, int argc, t_stack **stack_a)
 {
 	int j;
 
@@ -76,5 +67,6 @@ void ft_fill_stack(char **argv, int argc, t_stack **stack_a)
 		}
 	}
 	else
-		(*stack_a)->error = 1;
+		return(0);
+	return(1);
 }

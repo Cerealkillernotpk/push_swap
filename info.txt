@@ -1,0 +1,3 @@
+Penser a securiser les fonctions aditionnelles dans le parser.
+Cas 1 : Overflow, underflow.
+Cas 2 : Already parse.

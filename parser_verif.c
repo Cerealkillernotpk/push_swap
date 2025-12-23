@@ -6,21 +6,22 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 21:54:49 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 22:22:08 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_verif_repetition(char *str, t_stack *stack_a, int verif)
+int ft_verif_repetition(char *str, t_stack *stack_a)
 {
+	stack_a = stack_a->next;
 	while (stack_a)
 	{
-		if (str == stack_a->content)
-			verif++;
+		if (!ft_strncmp(str, stack_a->content, __UINT32_MAX__))
+			return(0);
 		stack_a = stack_a->next;
 	}
-	return (verif);
+	return (1);
 }
 int ft_verif_number(char *array)
 {
@@ -45,14 +46,11 @@ int ft_verif(t_stack *stack_a)
 
 	while (stack_a)
 	{
-		verif = ft_verif_number(stack_a->content);
-		ft_printf("num : %d\n", verif);
-		if (!verif)
-			return (0);
 		verif = 0;
-		ft_verif_repetition(stack_a->content, stack_a, verif);
-		ft_printf("rep : %d\n", verif);
-		if (verif > 1)
+		verif += ft_verif_number(stack_a->content);
+		verif += ft_verif_repetition(stack_a->content, stack_a);
+		ft_printf("verif : %d\n", verif);
+		if (verif != 2)
 			return (0);
 		stack_a = stack_a->next;
 	}

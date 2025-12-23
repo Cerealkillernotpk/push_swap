@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2025/12/23 10:58:23 by adakhama         ###   ########.fr        #
+#    Updated: 2025/12/23 23:52:05 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 
 SRC =	main.c \
-		ft_parser.c \
 		ft_fill_struct.c \
 		parser_verif.c \
 		librairie/struct/ft_listiter.c \
@@ -29,7 +28,6 @@ SRC =	main.c \
 		librairie/struct/ft_lstmap.c \
 		librairie/struct/ft_lstnew.c \
 		librairie/struct/ft_lstsize.c \
-		librairie/struct/ft_lstnew_nbr.c
 	
 OBJ = $(SRC:.c=.o)
 

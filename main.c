@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 19:36:36 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:56:03 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void ft_tmp(void *content)
 {
-	ft_printf("%s\n", content);
+	ft_printf("check 1 : %s\n", content);
 }
 
 int	ft_parser(char **argv, int argc)
@@ -28,10 +28,10 @@ int	ft_parser(char **argv, int argc)
     ft_lstiter(stack_a, ft_tmp);
 	if (ft_verif(stack_a) == 0)
 		return (0);
-	while (stack_a->content)
+	while (stack_a)
     {
 		stack_a->nbr = ft_atoi(stack_a->content);
-		ft_printf("%d", stack_a->nbr);
+		ft_printf("check 2 : %d\n", stack_a->nbr);
         stack_a = stack_a->next;
     }
 	return (1);

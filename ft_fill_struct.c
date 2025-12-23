@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 19:45:36 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/23 21:57:38 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void ft_fill_stack(char **argv, int argc, t_stack **stack_a)
 {
 	int j;
 
-	j = 0;
+	j = 1;
 	if (argc == 2)
 		ft_single_arg(argv, stack_a);
 	else if (argc > 2)

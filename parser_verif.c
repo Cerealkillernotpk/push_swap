@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 22:22:08 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/24 15:43:21 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,22 @@ int ft_verif_number(char *array)
 	i++;
 	while (array[i])
 	{
-		ft_printf("i + 1 : %c\n", array[i]);
 		if (i > 0 && ft_isdigit(array[i]) == 0)
 			return (0);
 		i++;
 	}
 	return (1);
+}
+
+int ft_check_overflow(char *str)
+{
+	int nbr;
+
+	nbr = ft_atoi(str);
+	if (nbr > 2147483647 || nbr < -2147483648)
+		return (0);
+	else
+		return (1);
 }
 int ft_verif(t_stack *stack_a)
 {
@@ -49,8 +59,9 @@ int ft_verif(t_stack *stack_a)
 		verif = 0;
 		verif += ft_verif_number(stack_a->content);
 		verif += ft_verif_repetition(stack_a->content, stack_a);
+		verif += ft_check_overflow(stack_a->content);
 		ft_printf("verif : %d\n", verif);
-		if (verif != 2)
+		if (verif != 3)
 			return (0);
 		stack_a = stack_a->next;
 	}

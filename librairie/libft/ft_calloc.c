@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:15:21 by adakhama          #+#    #+#             */
-/*   Updated: 2025/10/29 14:17:29 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:37:55 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
 	void	*res;
 
-	i = 0;
 	if (nmemb == 0 || size == 0)
 	{
 		res = malloc(0);

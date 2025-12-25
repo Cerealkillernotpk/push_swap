@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/24 15:59:38 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/24 19:20:50 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,15 @@ int ft_verif_number(char *array)
 
 int ft_check_overflow(char *str)
 {
-	if (ft_atoi(str) == 0)
+	char *str2;
+
+	str2 = ft_itoa(ft_atoi(str));
+	if ( ft_strncmp(str, str2, ft_strlen(str)) != 0)
 		return (0);
 	else
 		return (1);
 }
+
 int ft_verif(t_stack *stack_a)
 {
 	int verif;

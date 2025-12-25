@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/23 23:56:43 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:38:32 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ int ft_parser(char **argv, int argc)
 int main(int argc, char **argv)
 {
 	int i;
-	int j;
 
-	j = 1;
 	i = ft_parser(argv, argc);
-	ft_printf("verif = %d", i);
+	ft_printf("verif = %d\n", i);
 }

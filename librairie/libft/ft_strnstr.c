@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:12:19 by adakhama          #+#    #+#             */
-/*   Updated: 2025/10/28 13:06:13 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/24 18:37:24 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char		*str;
 	size_t		i;
 	size_t		j;
 
-	str = 0;
 	i = 0;
 	j = 0;
 	if (*little == '\0')

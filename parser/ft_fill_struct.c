@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/26 00:00:26 by adakhama         ###   ########.fr       */
+/*   Updated: 2025/12/26 17:36:11 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,16 @@ void ft_multiple_arg(char **argv, t_stack **stack_a, int j)
 	char **tmp;
 
 	k = 0;
-	if (ft_split(argv[j], ' '))
+	tmp = ft_split(argv[j], ' ');
+	if (!tmp)
+		return;
+	while (tmp[k])
 	{
-		tmp = ft_split(argv[j], ' ');
-		if (!tmp)
-			return;
-		while (tmp[k])
-		{
-			ft_add_node(tmp[k], stack_a);
-			free(tmp[k]);
-			k++;
-		}
+		ft_add_node(tmp[k], stack_a);
+		free(tmp[k]);
+		k++;
 	}
-	else
-		ft_add_node(argv[j], stack_a);
-	if (ft_split(argv[j], ' '))
-		free(tmp);
+	free(tmp);
 }
 
 void ft_single_arg(char **argv, t_stack **stack_a)

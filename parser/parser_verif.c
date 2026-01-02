@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/26 00:40:10 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/02 16:46:33 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int ft_verif_number(char *array)
 	i = 0;
 	if (!array || (ft_isdigit(array[i]) == 0 &&	 array[i] != '+' && array[i] != '-'))
 		return (0);
+	if ((array[i] != '+' || array[i] != '-') && !array[i + 1])
+		return (0);
 	i++;
 	while (array[i])
 	{
@@ -52,6 +54,8 @@ int ft_verif(t_stack *stack_a)
 {
 	int verif;
 
+	if (!stack_a)
+		return (0);
 	while (stack_a)
 	{
 		verif = 0;

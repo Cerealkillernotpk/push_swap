@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/02 21:00:23 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/02 21:48:05 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ int ft_verif_number(char *array)
 
 int ft_check_overflow(char *str)
 {
+	if (ft_strlen(str) > 11)
+		return(0);
 	if (ft_atoll(str) > INT_MAX || ft_atoll(str) < INT_MIN)
 		return (0);
 	else
@@ -58,9 +60,9 @@ int ft_verif(t_stack *stack_a)
 	{
 		verif = 0;
 		verif += ft_verif_number(stack_a->content);
-		verif += ft_verif_repetition(stack_a->content, stack_a);
+		// verif += ft_verif_repetition(stack_a->content, stack_a);
 		verif += ft_check_overflow(stack_a->content);
-		if (verif != 3)
+		if (verif != 2)
 			return (0);
 		stack_a = stack_a->next;
 	}

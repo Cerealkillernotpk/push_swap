@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/02 21:38:40 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:31:13 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,20 @@ int check_zero(t_stack **stack_a)
     return(1);
 }
 
+int test(t_stack **stack_a)
+{
+    // t_stack *stack_b;
+    // int *tmp;
+
+    // tmp = malloc(sizeof(int));
+    // stack_b = NULL;
+    // *tmp = 2145;
+    // stack_b->content = tmp;
+    (*stack_a)->c = 'a';
+    swap(stack_a, 0);
+    return (1);
+}
+
 int main(int argc, char **argv)
 {
     t_stack *stack_a;
@@ -59,7 +73,7 @@ int main(int argc, char **argv)
         ft_printf("Not sort\n");
     else
         ft_printf("Already sort\n");
-
+    test(&stack_a);
     free_stack(&stack_a);
     return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/02 21:21:53 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/03 14:53:29 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 typedef struct s_stack
 {
 	void            *content;
+	char			c;
 	struct s_stack	*next;
-	struct s_stack	*head;
 } t_stack;
 
 /*Fonction parser*/
@@ -52,8 +52,14 @@ t_stack		*ft_lstnew_nbr(int content);
 int			ft_sort_verif(t_stack *stack_a);
 int			ft_verif_repetition(char *str, t_stack *stack_a);
 
-/*Additionnelles*/
+/*More*/
 
 long long	ft_atoll(const char *str);
+
+/*Command*/
+
+int			push(t_stack **stack_send, t_stack **stack_receive);
+int			swap(t_stack **stack, int ver);
+int			ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif

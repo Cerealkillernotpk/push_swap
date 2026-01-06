@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 19:47:49 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:15:13 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,21 @@ int	check_zero(t_stack **stack_a)
 
 int	test(t_stack **stack_a)
 {
-	sb(stack_a);
+	rra(stack_a);
 	return (1);
+}
+
+void	print_stack(t_stack *stack_a)
+{
+	t_stack		*tmp;
+
+	tmp = stack_a;
+	while (tmp)
+	{
+		ft_printf("%d ", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
+	ft_printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -67,6 +80,7 @@ int	main(int argc, char **argv)
 	else
 		ft_printf("Already sort\n");
 	test(&stack_a);
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	return (0);
 }

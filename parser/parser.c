@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 15:27:44 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 20:07:24 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:17:20 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	*ft_affect(t_stack *stack_a)
 	return (tmp);
 }
 
-void ft_free_tmp(char **tmp)
+void	ft_free_tmp(char **tmp)
 {
 	int	j;
 
@@ -35,7 +35,7 @@ void ft_free_tmp(char **tmp)
 	free(tmp);
 }
 
-int	secure_tmp(char** tmp, int j)
+int	secure_tmp(char **tmp, int j)
 {
 	if (!tmp[j])
 	{

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:23:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 19:47:28 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:16:27 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	swap(t_stack **stack)
 {
 	t_stack	*first;
-	t_stack *second;
+	t_stack	*second;
 
 	if (!*stack || !stack || !(*stack)->next)
 		return (0);
@@ -58,7 +58,7 @@ int	rotate(t_stack **stack)
 int	reverse_rotate(t_stack **stack)
 {
 	t_stack	*prev;
-	t_stack *last;
+	t_stack	*last;
 
 	if (!*stack || !stack || !(*stack)->next)
 		return (0);
@@ -66,7 +66,7 @@ int	reverse_rotate(t_stack **stack)
 	while (prev->next->next)
 		prev = prev->next;
 	last = prev->next;
-	prev->next=NULL;
+	prev->next = NULL;
 	last->next = *stack;
 	*stack = last;
 	return (1);

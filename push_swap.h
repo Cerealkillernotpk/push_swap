@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/03 14:53:29 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 14:46:13 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 typedef struct s_stack
 {
 	void            *content;
-	char			c;
 	struct s_stack	*next;
 } t_stack;
 
@@ -59,7 +58,22 @@ long long	ft_atoll(const char *str);
 /*Command*/
 
 int			push(t_stack **stack_send, t_stack **stack_receive);
-int			swap(t_stack **stack, int ver);
+int			swap(t_stack **stack);
+int			rotate(t_stack **stack);
+int			reverse_rotate(t_stack **stack);
+
+/*Instructions*/
+
 int			ss(t_stack **stack_a, t_stack **stack_b);
+int			rr(t_stack **stack_a, t_stack **stack_b);
+int			rrr(t_stack **stack_a, t_stack **stack_b);
+int			sa(t_stack **stack_a);
+int			sb(t_stack **stack_b);
+int			pa(t_stack **stack_a, t_stack **stack_b);
+int			pb(t_stack **stack_a, t_stack **stack_b);
+int			ra(t_stack **stack_a);
+int			rb(t_stack **stack_b);
+int			rra(t_stack **stack_a);
+int			rrb(t_stack **stack_b);
 
 #endif

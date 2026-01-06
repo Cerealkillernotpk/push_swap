@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:23:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 16:50:38 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:47:28 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int	swap(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*first;
+	t_stack *second;
 
-	if (*stack == NULL || stack == NULL || (*stack)->next == NULL)
+	if (!*stack || !stack || !(*stack)->next)
 		return (0);
-	tmp = *stack;
-	tmp->next = tmp->next->next;
-	*stack = (*stack)->next;
-	(*stack)->next = tmp;
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
 	return (1);
 }
 
@@ -32,7 +34,7 @@ int	push(t_stack **stack_send, t_stack **stack_receive)
 	if (*stack_send == NULL || stack_send == NULL)
 		return (0);
 	tmp = *stack_send;
-	*stack_send = (*stack_send)->next;
+	*stack_send = tmp->next;
 	tmp->next = *stack_receive;
 	*stack_receive = tmp;
 	return (1);
@@ -40,25 +42,32 @@ int	push(t_stack **stack_send, t_stack **stack_receive)
 
 int	rotate(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*first;
+	t_stack	*last;
 
-	if (*stack == NULL)
+	if (!*stack || !stack || !(*stack)->next)
 		return (0);
-	tmp = *stack;
-	ft_lstlast(*stack)->next = *stack;
-	tmp->next = NULL;
+	first = *stack;
+	*stack = (*stack)->next;
+	first->next = NULL;
+	last = ft_lstlast(*stack);
+	last->next = first;
 	return (1);
 }
 
 int	reverse_rotate(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*prev;
+	t_stack *last;
 
-	if (*stack == NULL)
+	if (!*stack || !stack || !(*stack)->next)
 		return (0);
-	tmp = ft_lstlast(*stack);
-	tmp->next = *stack;
-	ft_lstdelone(ft_lstlast(*stack), free);
-	ft_lstlast(*stack)->next = NULL;
+	prev = *stack;
+	while (prev->next->next)
+		prev = prev->next;
+	last = prev->next;
+	prev->next=NULL;
+	last->next = *stack;
+	*stack = last;
 	return (1);
 }

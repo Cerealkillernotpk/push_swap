@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 16:47:50 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:47:49 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	check_zero(t_stack **stack_a)
 
 int	test(t_stack **stack_a)
 {
-	sa(stack_a);
+	sb(stack_a);
 	return (1);
 }
 

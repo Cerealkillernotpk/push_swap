@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 15:27:44 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 17:00:48 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:07:24 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,29 @@ int	*ft_affect(t_stack *stack_a)
 	return (tmp);
 }
 
+void ft_free_tmp(char **tmp)
+{
+	int	j;
+
+	j = 0;
+	while (tmp[j])
+	{
+		free(tmp[j]);
+		j++;
+	}
+	free(tmp);
+}
+
+int	secure_tmp(char** tmp, int j)
+{
+	if (!tmp[j])
+	{
+		ft_free_tmp(tmp);
+		return (0);
+	}
+	return (1);
+}
+
 int	argv_checker(char **argv, int argc)
 {
 	int		i;
@@ -33,20 +56,20 @@ int	argv_checker(char **argv, int argc)
 	while (i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
-		if (!tmp[j])
+		if (!secure_tmp(tmp, j))
 			return (0);
 		while (tmp[j])
+		{
 			if (!tmp[j++])
+			{
+				ft_free_tmp(tmp);
 				return (0);
+			}
+		}
 		i++;
 		j = 0;
+		ft_free_tmp(tmp);
 	}
-	while (tmp[j])
-	{
-		free(tmp[j]);
-		j++;
-	}
-	free(tmp);
 	return (1);
 }
 

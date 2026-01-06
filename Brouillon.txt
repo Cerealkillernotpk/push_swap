@@ -51,3 +51,6 @@ int main()
     }
     ft_printf("%s", stack);
 }
+
+
+PENSER A CORRIGER LES PUSH ET VOIR COMMENT INITALISER LES STACK_B

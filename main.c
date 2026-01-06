@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 20:15:13 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 20:25:07 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int	check_zero(t_stack **stack_a)
 
 int	test(t_stack **stack_a)
 {
-	rra(stack_a);
+	t_stack **stack_b;
+
+	*stack_b = ft_lstnew(&stack_b);
+	pb(stack_a, stack_b);
 	return (1);
 }
 

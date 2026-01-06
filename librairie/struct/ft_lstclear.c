@@ -6,21 +6,22 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:32:19 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:45:27 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:53:28 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void ft_lstclear(t_stack **lst, void (*del)(void *))
+void	ft_lstclear(t_stack **lst, void (*del)(void *))
 {
-    t_stack *tmp;
-    while (*lst)
-    {
-        tmp = (*lst)->next;
-        ft_lstdelone(*lst, del);
-        *lst = tmp;
-    }
-    free(*lst);
-    *lst = NULL;
+	t_stack	*tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
+	}
+	free(*lst);
+	*lst = NULL;
 }

@@ -6,14 +6,14 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 18:28:53 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:45:10 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:53:49 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void ft_lstdelone(t_stack *lst, void (*del)(void*))
+void	ft_lstdelone(t_stack *lst, void (*del)(void *))
 {
-    del(lst->content);
-    free(lst);
+	del(lst->content);
+	free(lst);
 }

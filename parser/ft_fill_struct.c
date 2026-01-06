@@ -6,33 +6,34 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 17:18:48 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/02 21:01:43 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:59:48 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void ft_add_node(char *str, t_stack **stack_a)
+void	ft_add_node(char *str, t_stack **stack_a)
 {
-	char *dup;
+	char	*dup;
 
 	dup = ft_strdup(str);
 	if (!dup)
-		return;
+		return ;
 	if (ft_lstsize(*stack_a) == 0)
 		*stack_a = ft_lstnew(dup);
 	else
 		ft_lstadd_back(stack_a, ft_lstnew(dup));
 }
-void ft_multiple_arg(char **argv, t_stack **stack_a, int j)
+
+void	ft_multiple_arg(char **argv, t_stack **stack_a, int j)
 {
-	int k;
-	char **tmp;
+	int		k;
+	char	**tmp;
 
 	k = 0;
 	tmp = ft_split(argv[j], ' ');
 	if (!tmp)
-		return;
+		return ;
 	while (tmp[k])
 	{
 		ft_add_node(tmp[k], stack_a);
@@ -42,17 +43,17 @@ void ft_multiple_arg(char **argv, t_stack **stack_a, int j)
 	free(tmp);
 }
 
-void ft_single_arg(char **argv, t_stack **stack_a)
+void	ft_single_arg(char **argv, t_stack **stack_a)
 {
-	char **tmp;
-	int i;
+	char	**tmp;
+	int		i;
 
 	i = 0;
 	tmp = ft_split(argv[1], ' ');
 	if (!tmp)
-		return;
+		return ;
 	while (tmp[i])
-	{	
+	{
 		ft_add_node(tmp[i], stack_a);
 		free(tmp[i]);
 		i++;
@@ -62,8 +63,8 @@ void ft_single_arg(char **argv, t_stack **stack_a)
 
 int	ft_fill_stack(char **argv, int argc, t_stack **stack_a)
 {
-	int j;
-	int i;
+	int	j;
+	int	i;
 
 	j = 1;
 	i = 1;
@@ -78,6 +79,6 @@ int	ft_fill_stack(char **argv, int argc, t_stack **stack_a)
 		}
 	}
 	else
-		return(0);
-	return(1);
+		return (0);
+	return (1);
 }

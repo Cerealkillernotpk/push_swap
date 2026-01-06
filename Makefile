@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2026/01/03 15:22:50 by adakhama         ###   ########.fr        #
+#    Updated: 2026/01/06 15:47:14 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,10 @@ SRC =	main.c \
 		parser/ft_fill_struct.c \
 		parser/parser_verif.c \
 		ft_sort_verif.c \
-		ft_command_sp.c \
+		ft_command.c \
+		ft_instruction1.c \
+		ft_instruction2.c \
+		ft_instruction3.c \
 		librairie/struct/ft_listiter.c \
 		librairie/struct/ft_lstadd_back.c \
 		librairie/struct/ft_lstadd_front.c \

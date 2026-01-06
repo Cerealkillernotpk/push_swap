@@ -6,20 +6,20 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:18:04 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:45:52 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:55:02 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-t_stack *ft_lstnew(void *content)
+t_stack	*ft_lstnew(void *content)
 {
-    t_stack *elem;
-    
-    elem = malloc(sizeof(t_stack));
-    if(!elem)
-        return(NULL);
-    elem->content = content;
-    elem->next = NULL;
-    return(elem);
+	t_stack	*elem;
+
+	elem = malloc(sizeof(t_stack));
+	if (!elem)
+		return (NULL);
+	elem->content = content;
+	elem->next = NULL;
+	return (elem);
 }

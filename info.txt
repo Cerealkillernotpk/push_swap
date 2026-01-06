@@ -1,3 +1,53 @@
 Penser a securiser les fonctions aditionnelles dans le parser.
-Cas 1 : Overflow, underflow.
-Cas 2 : Already parse.
+
+// #include "push_swap.h"
+
+// void func(t_ *info)
+// {
+//     printf("%i", info->ind);
+//     return ;
+// }
+
+// #include <stdio.h>
+// int main()
+// {
+//     t_stack info;
+//     t_stack info2;
+//     t_stack tmp;
+
+//     tmp = info;
+//     while (tmp.next)
+//         tmp = tmp->next;
+//     info.next = &info2;
+//     info.nbr = 0;
+//     func(&info);
+// }
+
+#include "push_swap.h"
+
+void	ft_add_node(char *str, t_stack *stack)
+{
+	ft_lstadd_back(&stack, ft_lstnew(str));
+	if (!stack)
+		stack->error = 1;
+}
+
+int main()
+{
+    t_stack *stack;
+    char    **str;
+    int     i;
+    
+    stack = malloc(sizeof(t_stack));
+    str = NULL;
+    i = 0;
+    str[0] = "jesuistonpere";
+    str[1] = "luke";
+    stack->content = 0;
+    while (str[i])
+    {
+        ft_add_node(str[i++], stack);   
+        ft_printf("%s\n", str);
+    }
+    ft_printf("%s", stack);
+}

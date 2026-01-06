@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_instruction2.c                                       :+:      :+:    :+:   */
+/*   ft_instruction2.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:23:16 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/30 20:23:17 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:56:03 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int sa(t_stack **stack_a)
+int	sa(t_stack **stack_a)
 {
-    swap(stack_a);
-    ft_printf("sa\n");
+	if (!swap(stack_a))
+		return (0);
+	ft_printf("sa\n");
+	return (1);
 }
 
-int sb(t_stack **stack_b)
+int	sb(t_stack **stack_b)
 {
-    swap(stack_b);
-    ft_printf("sb\n");
+	if (!swap(stack_b))
+		return (0);
+	ft_printf("sb\n");
+	return (1);
 }
 
-int pa(t_stack **stack_a, t_stack **stack_b)
+int	pa(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_b, stack_a);
-    ft_printf("pa\n");
+	if (!push(stack_b, stack_a))
+		return (0);
+	ft_printf("pa\n");
+	return (1);
 }
 
-int pb(t_stack **stack_a, t_stack **stack_b)
+int	pb(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_a, stack_b);
-    ft_printf("pb\n");
+	if (!push(stack_a, stack_b))
+		return (0);
+	ft_printf("pb\n");
+	return (1);
 }

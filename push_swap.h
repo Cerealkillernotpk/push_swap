@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 14:46:13 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:49:21 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 typedef struct s_stack
 {
-	void            *content;
+	void			*content;
 	struct s_stack	*next;
-} t_stack;
+}	t_stack;
 
 /*Fonction parser*/
 

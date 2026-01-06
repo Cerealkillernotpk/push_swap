@@ -6,15 +6,14 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 17:32:30 by adakhama          #+#    #+#             */
-/*   Updated: 2025/12/19 14:45:30 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/06 16:52:57 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap.h"
 
-void ft_lstadd_front(t_stack **lst, t_stack *new)
+void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
-    new->next = *lst;
-
-    *lst = new;
+	new->next = *lst;
+	*lst = new;
 }

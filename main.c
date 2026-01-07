@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/07 17:30:41 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/07 18:31:42 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	main(int argc, char **argv)
 	t_stack		*stack_b;
 
 	stack_a = NULL;
-	if (!parse(&stack_a, argv, argc))
+	if (parse(&stack_a, argv, argc) == 1)
 		return (1);
+	distrib_index(stack_a);
 	stack_b = NULL;
 	stack_b = ft_lstnew(&stack_b);
 	stack_b->content = malloc(sizeof(t_stack));

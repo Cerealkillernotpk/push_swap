@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 20:25:07 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:30:41 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,65 +25,19 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-int	check_zero(t_stack **stack_a)
-{
-	while (*stack_a)
-	{
-		if (!ft_verif_repetition((*stack_a)->content, *stack_a))
-			return (0);
-		stack_a = &(*stack_a)->next;
-	}
-	return (1);
-}
-
-int	test(t_stack **stack_a)
-{
-	t_stack **stack_b;
-
-	*stack_b = ft_lstnew(&stack_b);
-	pb(stack_a, stack_b);
-	return (1);
-}
-
-void	print_stack(t_stack *stack_a)
-{
-	t_stack		*tmp;
-
-	tmp = stack_a;
-	while (tmp)
-	{
-		ft_printf("%d ", *(int *)tmp->content);
-		tmp = tmp->next;
-	}
-	ft_printf("\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
-	int			verif;
+	t_stack		*stack_b;
 
 	stack_a = NULL;
-	verif = ft_parser(argv, argc, &stack_a);
-	if (!verif)
-	{
-		ft_printf("Error\n");
-		free_stack(&stack_a);
+	if (!parse(&stack_a, argv, argc))
 		return (1);
-	}
-	if (check_zero(&stack_a) == 0)
-	{
-		ft_printf("Error\n");
-		free_stack(&stack_a);
-		return (1);
-	}
-	ft_printf("Parser works !!\n");
-	if (ft_sort_verif(stack_a))
-		ft_printf("Not sort\n");
-	else
-		ft_printf("Already sort\n");
-	test(&stack_a);
-	print_stack(stack_a);
+	stack_b = NULL;
+	stack_b = ft_lstnew(&stack_b);
+	stack_b->content = malloc(sizeof(t_stack));
+	
 	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

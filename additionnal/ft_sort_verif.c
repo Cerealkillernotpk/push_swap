@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_sort_verif.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/15 10:50:13 by adakhama          #+#    #+#             */
-/*   Updated: 2025/10/28 14:25:39 by adakhama         ###   ########.fr       */
+/*   Created: 2025/12/25 14:22:32 by adakhama          #+#    #+#             */
+/*   Updated: 2026/01/07 17:33:44 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_sort_verif(t_stack *stack_a)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
+	int			current;
+	int			next;
+	t_stack		*tmp;
 
-	i = ft_strlen(dst);
-	j = ft_strlen(src);
-	k = 0;
-	if (size <= i)
-		return (size + j);
-	while ((i + k + 1) < size && src[k])
+	tmp = stack_a;
+	while (tmp)
 	{
-		dst[i + k] = src[k];
-		k++;
+		ft_printf("%d ", *(int *)tmp->content);
+		tmp = tmp->next;
 	}
-	dst[i + k] = '\0';
-	return (i + j);
+	ft_printf("\n");
+	while (stack_a && stack_a->next)
+	{
+		current = *(int *)stack_a->content;
+		next = *(int *)stack_a->next->content;
+		if (current > next)
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
 }

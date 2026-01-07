@@ -1,0 +1,31 @@
+/*Tests*/
+
+int	test(t_stack **stack_a, t_stack **stack_b)
+{
+	// (void)stack_b;
+	pb(stack_a, stack_b);
+	pb(stack_a, stack_b);
+	if (!ss(stack_a, stack_b))
+		return (0);
+	return (1);
+}
+
+void	print_stack(t_stack *stack)
+{
+	t_stack		*tmp;
+
+	if (!stack)
+		return ;
+	tmp = stack;
+	while (tmp)
+	{
+		ft_printf("%d ", *(int *)tmp->content);
+		tmp = tmp->next;
+	}
+	ft_printf("\n");
+}
+
+// if (!test(&stack_a, &stack_b))
+	// 	return (1);
+	// // print_stack(stack_a);
+	// // print_stack(stack_b);

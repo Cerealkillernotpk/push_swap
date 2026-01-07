@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2026/01/06 15:47:14 by adakhama         ###   ########.fr        #
+#    Updated: 2026/01/07 17:38:35 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,49 +17,50 @@ CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 
 SRC =	main.c \
-		additionnelles/ft_atoll.c \
-		parser/parser.c \
+		additionnal/ft_atoll.c \
+		additionnal/ft_sort_verif.c \
+		parser/parser1.c \
+		parser/parser2.c \
 		parser/ft_fill_struct.c \
 		parser/parser_verif.c \
-		ft_sort_verif.c \
-		ft_command.c \
-		ft_instruction1.c \
-		ft_instruction2.c \
-		ft_instruction3.c \
-		librairie/struct/ft_listiter.c \
-		librairie/struct/ft_lstadd_back.c \
-		librairie/struct/ft_lstadd_front.c \
-		librairie/struct/ft_lstclear.c \
-		librairie/struct/ft_lstdelone.c \
-		librairie/struct/ft_lstlast.c \
-		librairie/struct/ft_lstmap.c \
-		librairie/struct/ft_lstnew.c \
-		librairie/struct/ft_lstsize.c \
+		command/ft_command.c \
+		command/ft_instruction1.c \
+		command/ft_instruction2.c \
+		command/ft_instruction3.c \
+		library/struct/ft_listiter.c \
+		library/struct/ft_lstadd_back.c \
+		library/struct/ft_lstadd_front.c \
+		library/struct/ft_lstclear.c \
+		library/struct/ft_lstdelone.c \
+		library/struct/ft_lstlast.c \
+		library/struct/ft_lstmap.c \
+		library/struct/ft_lstnew.c \
+		library/struct/ft_lstsize.c \
 	
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME):$(OBJ)
-	make -C librairie/printf -s
-	make -C librairie/libft -s
-	cc -o $(NAME) $(OBJ) $(CFLAGS) -Llibrairie/libft -Llibrairie/printf -l:libft.a -l:libftprintf.a
+	make -C library/printf -s
+	make -C library/libft -s
+	cc -o $(NAME) $(OBJ) $(CFLAGS) -Llibrary/libft -Llibrary/printf -l:libft.a -l:libftprintf.a
 
 %.o:%.c
-	$(CC) $(CFLAGS) $< -c -o $@ -I librairie/libft -I librairie/printf
+	$(CC) $(CFLAGS) $< -c -o $@ -I library/libft -I library/printf
 
 clean: 
 	-rm -f $(OBJ)
-	make -C librairie/printf clean -s
-	make -C librairie/libft clean -s
+	make -C library/printf clean -s
+	make -C library/libft clean -s
 
 fclean: clean
 	-rm -f $(NAME)
-	make -C librairie/printf fclean -s
-	make -C librairie/libft	fclean -s
+	make -C library/printf fclean -s
+	make -C library/libft	fclean -s
 
 re: fclean all
-	make -C librairie/printf re -s
-	make -C librairie/libft re -s
+	make -C library/printf re -s
+	make -C library/libft re -s
 
 .PHONY: all clean fclean re

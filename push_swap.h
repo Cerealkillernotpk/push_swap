@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 16:49:21 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:37:51 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "librairie/printf/ft_printf.h"
-# include "librairie/libft/libft.h"
+# include "library/printf/ft_printf.h"
+# include "library/libft/libft.h"
 
 typedef struct s_stack
 {
@@ -25,9 +25,15 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+
+/*Main*/
+
+void		free_stack(t_stack **stack);
+
 /*Fonction parser*/
 
-char		*ft_distrib(char **argv, int argc);
+int			parse(t_stack **stack_a, char **argv, int argc);
+// char		*ft_distrib(char **argv, int argc);
 int			ft_parser(char **argv, int argc, t_stack **stack_a);
 int			ft_fill_stack(char **argv, int argc, t_stack **stack_a);
 int			ft_verif(t_stack *stack_a);

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 14:22:32 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/07 20:44:17 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:46:10 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ int	ft_sort_verif(t_stack *stack_a)
 	return (0);
 }
 
-int ft_index(int current, t_stack *stack_a)
+int	ft_index(int current, t_stack *stack_a)
 {
 	int		i;
 
 	i = 0;
 	while (stack_a)
 	{
-		if(current > *(int *)stack_a->content)
+		if (current > *(int *)stack_a->content)
 			i++;
 		stack_a = stack_a->next;
 	}
-	return(i);
+	return (i);
 }
 
-void distrib_index(t_stack *stack_a)
+void	distrib_index(t_stack *stack_a)
 {
 	int		current;
 	int		index_tmp;

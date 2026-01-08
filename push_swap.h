@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 14:05:22 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:42:33 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 typedef struct s_stack
 {
 	void			*content;
-	int 			index;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
 
 /*Main*/
 
@@ -42,6 +41,7 @@ void		ft_add_node(char *str, t_stack **stack);
 
 /*Librairie fonction de struct*/
 
+int			ft_lstsize(t_stack *lst);
 void		ft_lstiter(t_stack *lst, void (*f)(void *));
 void		ft_lstadd_back(t_stack **lst, t_stack *new);
 void		ft_lstadd_front(t_stack **lst, t_stack *new);
@@ -50,14 +50,13 @@ void		ft_lstdelone(t_stack *lst, void (*del)(void*));
 t_stack		*ft_lstlast(t_stack *lst);
 t_stack		*ft_lstmap(t_stack *lst, void *(*f)(void *), void (*del)(void *));
 t_stack		*ft_lstnew(void *content);
-int			ft_lstsize(t_stack *lst);
 t_stack		*ft_lstnew_nbr(int content);
 
 /*Algo*/
 
 int			ft_sort_verif(t_stack *stack_a);
-void 		distrib_index(t_stack *stack_a);
 int			ft_verif_repetition(char *str, t_stack *stack_a);
+void		distrib_index(t_stack *stack_a);
 
 /*More*/
 

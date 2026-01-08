@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 14:19:59 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:43:18 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_verif_number(char *array)
 int	ft_check_overflow(char *str)
 {
 	char	**tmp;
-	int i;
+	int		i;
 
 	i = 0;
 	if (ft_strlen(str) > 11)
@@ -68,7 +68,6 @@ int	ft_check_overflow(char *str)
 		return (0);
 	else
 		return (1);
-		
 }
 
 int	ft_verif(t_stack *stack_a)

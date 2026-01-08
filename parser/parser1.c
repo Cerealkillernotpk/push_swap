@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser1.c                                            :+:      :+:    :+:   */
+/*   parser1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:29:29 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/07 17:33:31 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:44:13 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_zero(t_stack **stack_a)
 	return (1);
 }
 
-int parse(t_stack **stack_a, char **argv, int argc)
+int	parse(t_stack **stack_a, char **argv, int argc)
 {
 	int	verif;
 

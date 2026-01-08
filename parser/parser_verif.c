@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/06 17:04:51 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:19:59 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,29 @@ int	ft_verif_number(char *array)
 
 int	ft_check_overflow(char *str)
 {
+	char	**tmp;
+	int i;
+
+	i = 0;
 	if (ft_strlen(str) > 11)
-		return (0);
+	{
+		tmp = ft_split(str, '0');
+		if (tmp != NULL && ft_strlen(*tmp) > 11)
+		{
+			while (tmp[i])
+				free(tmp[i++]);
+			free(tmp);
+			return (0);
+		}
+		while (tmp[i])
+			free(tmp[i++]);
+		free(tmp);
+	}
 	if (ft_atoll(str) > INT_MAX || ft_atoll(str) < INT_MIN)
 		return (0);
 	else
 		return (1);
+		
 }
 
 int	ft_verif(t_stack *stack_a)

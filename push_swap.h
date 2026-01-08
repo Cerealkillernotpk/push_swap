@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/07 19:09:21 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 14:05:22 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ void		free_stack(t_stack **stack);
 /*Fonction parser*/
 
 int			parse(t_stack **stack_a, char **argv, int argc);
-
-// char		*ft_distrib(char **argv, int argc);
+int			ft_check_overflow(char *str);
 int			ft_parser(char **argv, int argc, t_stack **stack_a);
 int			ft_fill_stack(char **argv, int argc, t_stack **stack_a);
 int			ft_verif(t_stack *stack_a);

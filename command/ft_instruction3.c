@@ -6,11 +6,11 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 20:23:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/07 16:03:17 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 15:35:06 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ra(t_stack **stack_a)
 {

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 14:42:33 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/08 17:04:53 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_stack		*ft_lstnew_nbr(int content);
 
 /*Algo*/
 
+int			algo_central(t_stack **stack_a, t_stack **stack_b);
 int			ft_sort_verif(t_stack *stack_a);
 int			ft_verif_repetition(char *str, t_stack *stack_a);
 void		distrib_index(t_stack *stack_a);

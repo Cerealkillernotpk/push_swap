@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 14:22:32 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 14:46:10 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:16:02 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,10 @@ void	distrib_index(t_stack *stack_a)
 	{
 		current = *(int *)stack_a->content;
 		index_tmp = ft_index(current, &tmp);
-		stack_a = stack_a->next;
 		stack_a->index = index_tmp;
-		ft_printf("%d ", stack_a->index);
+		stack_a = stack_a->next;
 	}
 	current = *(int *)stack_a->content;
 	index_tmp = ft_index(current, &tmp);
 	stack_a->index = index_tmp;
-	ft_printf("%d\n", stack_a->index);
 }

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 20:04:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 17:44:35 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 15:52:19 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void from_a_to_b(t_stack **stack_a, t_stack **stack_b, int limit)
 {
 	int	i;
+	int size;
 
 	i = 0;
-	while(*stack_a)
+	size = ft_lstsize(*stack_a);
+	while(i < size)
 	{
 		if ((*stack_a)->index < i)
 		{
@@ -69,8 +71,10 @@ void	from_b_to_a(t_stack **stack_a, t_stack **stack_b)
 	int max;
 	int pos;
 	int len;
+	int size;
 
-	while(*stack_b)
+	size = ft_lstsize(*stack_b);
+	while(size - 1)
 	{
 		len = ft_lstsize(*stack_b);
 		max = max_index(*stack_b);
@@ -86,6 +90,7 @@ void	from_b_to_a(t_stack **stack_a, t_stack **stack_b)
 				rrb(stack_b);
 		}
 		pa(stack_a, stack_b);
+		size--;
 	}
 }
 

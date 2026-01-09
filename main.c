@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 18:18:29 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:53:31 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ int	main(int argc, char **argv)
 	distrib_index(stack_a);
 	stack_b = NULL;
 	print_index(stack_a);
-	algo_central(&stack_a, &stack_b);
+	if (ft_lstsize(stack_a) == 2)
+		sa(&stack_a);
+	else if (ft_lstsize(stack_a) == 3)
+		algo_sort3(&stack_a);
+	else
+		algo_central(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

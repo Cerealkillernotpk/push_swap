@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 19:53:31 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:16:54 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-void print_index(t_stack *stack)
+void	print_index(t_stack *stack)
 {
 	t_stack	*tmp;
 
@@ -52,7 +52,9 @@ int	main(int argc, char **argv)
 	if (ft_lstsize(stack_a) == 2)
 		sa(&stack_a);
 	else if (ft_lstsize(stack_a) == 3)
-		algo_sort3(&stack_a);
+		algo_sort_three(&stack_a);
+	else if (ft_lstsize(stack_a) == 5)
+		algo_sort_five(&stack_a, &stack_b);
 	else
 		algo_central(&stack_a, &stack_b);
 	free_stack(&stack_a);

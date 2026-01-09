@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 20:44:29 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:17:39 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	ft_check_overflow(char *str)
 		while (str[i + j])
 			j++;
 		if (j > 11)
-			return(0);
+			return (0);
 	}
 	if (ft_atoll(str) > INT_MAX || ft_atoll(str) < INT_MIN)
 		return (0);

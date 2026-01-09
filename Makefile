@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2026/01/09 19:45:09 by adakhama         ###   ########.fr        #
+#    Updated: 2026/01/09 21:12:35 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ CFLAGS = -Wall -Werror -Wextra -g
 NAME = push_swap
 
 SRC =	main.c \
-		algo_butterfly.c \
-		algo_utils.c \
-		algo_3et5.c \
+		algo/algo_butterfly.c \
+		algo/algo_utils.c \
+		algo/algo_3et5.c \
 		additionnal/ft_atoll.c \
 		additionnal/ft_sort_verif.c \
 		parser/parser1.c \

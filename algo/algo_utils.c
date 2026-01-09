@@ -6,39 +6,39 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 19:34:15 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 19:35:03 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:23:47 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int max_index(t_stack *stack)
+int	max_index(t_stack *stack)
 {
-	int max;
-	
+	int	max;
+
 	if (!stack)
 		return (-1);
 	max = stack->index;
-	while(stack)
+	while (stack)
 	{
 		if (stack->index > max)
 			max = stack->index;
 		stack = stack->next;
 	}
-	return(max);
+	return (max);
 }
 
 int	max_position(t_stack *stack, int max)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack)
 	{
 		if (stack->index == max)
-			return(i);
+			return (i);
 		stack = stack->next;
 		i++;
 	}
-	return(-1);
+	return (-1);
 }

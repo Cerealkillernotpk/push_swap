@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 20:04:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 15:52:19 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 19:11:43 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int max_index(t_stack *stack)
 {
 	int max;
 	
+	if (!stack)
+		return (-1);
 	max = stack->index;
 	while(stack)
 	{
@@ -71,26 +73,21 @@ void	from_b_to_a(t_stack **stack_a, t_stack **stack_b)
 	int max;
 	int pos;
 	int len;
-	int size;
 
-	size = ft_lstsize(*stack_b);
-	while(size - 1)
+	while(*stack_b)
 	{
 		len = ft_lstsize(*stack_b);
 		max = max_index(*stack_b);
 		pos = max_position(*stack_b, max);
+		if (max == -1 || pos == -1)
+			return ;
 		if (pos <= len / 2)
-		{
 			while((*stack_b)->index != max)
 				rb(stack_b);
-		}
 		else
-		{
 			while((*stack_b)->index != max)
 				rrb(stack_b);
-		}
 		pa(stack_a, stack_b);
-		size--;
 	}
 }
 
@@ -100,7 +97,7 @@ int	algo_central(t_stack **stack_a, t_stack **stack_b)
 	int len;
 
 	len = ft_lstsize(*stack_a);
-	limit = len / 20 + 8;
+	limit = len / 20 + 8;	
 	from_a_to_b(stack_a, stack_b, limit);
 	from_b_to_a(stack_a, stack_b);
 	return (1);

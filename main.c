@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 15:16:09 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 18:18:29 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ int	main(int argc, char **argv)
 	if (parse(&stack_a, argv, argc) == 1)
 		return (1);
 	distrib_index(stack_a);
-	stack_b = ft_lstnew(&stack_b);
-	stack_b->content = malloc(sizeof(int));
+	stack_b = NULL;
 	print_index(stack_a);
 	algo_central(&stack_a, &stack_b);
 	free_stack(&stack_a);

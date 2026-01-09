@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:29:29 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/08 14:44:13 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:34:50 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,18 @@ int	parse(t_stack **stack_a, char **argv, int argc)
 	verif = ft_parser(argv, argc, stack_a);
 	if (!verif)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		free_stack(stack_a);
 		return (1);
 	}
 	if (check_zero(stack_a) == 0)
 	{
-		ft_printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
 		free_stack(stack_a);
 		return (1);
 	}
-	ft_printf("Parser works !!\n");
-	if (ft_sort_verif(*stack_a))
-		ft_printf("Not sort\n");
-	else
+	if (!ft_sort_verif(*stack_a))
 	{
-		ft_printf("Already sort\n");
 		free_stack(stack_a);
 		return (1);
 	}

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:50:12 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:16:54 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:40:51 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,6 @@ void	free_stack(t_stack **stack)
 	}
 }
 
-void	print_index(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	while (tmp)
-	{
-		ft_printf("%d ", tmp->index);
-		tmp = tmp->next;
-	}
-	ft_printf("\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack		*stack_a;
@@ -48,7 +35,6 @@ int	main(int argc, char **argv)
 		return (1);
 	distrib_index(stack_a);
 	stack_b = NULL;
-	print_index(stack_a);
 	if (ft_lstsize(stack_a) == 2)
 		sa(&stack_a);
 	else if (ft_lstsize(stack_a) == 3)

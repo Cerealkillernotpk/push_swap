@@ -1,0 +1,5 @@
+checker_linux
+*.o
+*.a
+push_swap
+compile_commands.json

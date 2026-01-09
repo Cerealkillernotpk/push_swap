@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 19:14:56 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:20:52 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/09 21:48:58 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,20 @@
 
 void	algo_sort_three(t_stack **stack_a)
 {
+	int current;
 	int	last;
 	int	middle;
 
+	current = *(int *)(*stack_a)->content;
 	middle = *(int *)(*stack_a)->next->content;
 	last = *(int *)(*stack_a)->next->next->content;
-	if (*(int *)(*stack_a)->content > middle &&
-		*(int *)(*stack_a)->content > last)
+	if (current > middle && current > last)
 		ra(stack_a);
-	else if (*(int *)(*stack_a)->content < middle && middle > last)
+	else if (current < middle && middle > last)
 		rra(stack_a);
-	if (*(int *)(*stack_a)->content > middle)
+	current = *(int *)(*stack_a)->content;
+	middle = *(int *)(*stack_a)->next->content;
+	if (current > middle)
 		sa(stack_a);
 }
 

@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:29:29 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:34:50 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/10 16:13:52 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	parse(t_stack **stack_a, char **argv, int argc)
 {
 	int	verif;
 
+	if (argc == 1)
+		return (1);
 	verif = ft_parser(argv, argc, stack_a);
 	if (!verif)
 	{

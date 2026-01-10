@@ -3,3 +3,4 @@ checker_linux
 *.a
 push_swap
 compile_commands.json
+*.txt

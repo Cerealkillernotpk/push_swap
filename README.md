@@ -45,6 +45,17 @@ To compile and execute:
 make              # Compiles the push_swap executable 
 ```
 
+To clean all:
+
+```bash
+make fclean			# Clean all
+```
+
+To compile for the second time:
+```bash
+make re 
+```
+
 For example:
 ```bash
 ./push_swap 4 3 2 1

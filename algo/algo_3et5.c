@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/09 19:14:56 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:48:58 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/01/10 12:47:29 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	algo_sort_three(t_stack **stack_a)
 {
-	int current;
+	int	current;
 	int	last;
 	int	middle;
 

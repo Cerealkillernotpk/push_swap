@@ -28,7 +28,7 @@ Here’s the arsenal of operations you’ll use to manage and sort the stacks:
 
 The Push Swap project employs a **Butterfly Sort** algorithm, ideal for handling integers with high efficiency. Here’s a breakdown of how it works:
 
-### Butterfly Sort for Larger Sets
+### Butterfly Sort for Large Sets
 
 For large sets, we use **Butterfly Sort**. The algorithm:
 

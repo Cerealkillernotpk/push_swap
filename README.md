@@ -1,12 +1,12 @@
-# Push Swap: A 42 Project to Master Stack-Based Sorting 🎩
+# Push Swap: A 42 Project to Master Stack-Based Sorting
 
 Welcome to **Push Swap**, where your mission is to sort a set of integers using only two stacks and a limited set of operations. This project is designed to test your algorithmic skills, especially in the art of sequential access sorting. Let’s dive into the world of stack manipulation, efficient sorting, and optimized move counts to achieve a clean, organized stack!
 
-## 🌟 Goal
+## Goal
 
 Sort integers in ascending order using only two stacks (A and B) and a predefined set of operations. The challenge? Use the fewest moves possible to optimize your solution. Achieving efficiency in this constrained environment is key, as each move counts!
 
-## 🔄 Instruction Set
+## Instruction Set
 
 Here’s the arsenal of operations you’ll use to manage and sort the stacks:
 
@@ -24,7 +24,7 @@ Here’s the arsenal of operations you’ll use to manage and sort the stacks:
 | `rrb`| reverse rotate b    | Shifts all elements in stack B from top to bottom.|
 | `rrr`| reverse rotate a + b| Performs `rra` and `rrb` simultaneously.          |
 
-## 🧠 Algorithm
+## Algorithm
 
 The Push Swap project employs a **Butterfly Sort** algorithm, ideal for handling integers with high efficiency. Here’s a breakdown of how it works:
 
@@ -53,12 +53,10 @@ make fclean			# Clean all
 
 To compile for the second time:
 ```bash
-make re 
+make re				# Clean all & Compiles the push_swap executable
 ```
 
 For example:
 ```bash
 ./push_swap 4 3 2 1
 ```
-
-Happy sorting, and may your moves be minimal! 🏆

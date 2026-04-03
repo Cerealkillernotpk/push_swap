@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 15:05:16 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:06:45 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/04/03 15:41:32 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			ft_parser(char **argv, int argc, t_stack **stack_a);
 int			ft_fill_stack(char **argv, int argc, t_stack **stack_a);
 int			ft_verif(t_stack *stack_a);
 void		ft_add_node(char *str, t_stack **stack);
+int			verif_duplicate(char **av);
 
 /*Librairie fonction de struct*/
 

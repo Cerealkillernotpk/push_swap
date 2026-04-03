@@ -6,7 +6,7 @@
 #    By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 13:50:46 by adakhama          #+#    #+#              #
-#    Updated: 2026/01/09 21:12:35 by adakhama         ###   ########.fr        #
+#    Updated: 2026/04/03 15:43:21 by adakhama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC =	main.c \
 		parser/parser2.c \
 		parser/ft_fill_struct.c \
 		parser/parser_verif.c \
+		parser/verif_dup.c \
 		command/ft_command.c \
 		command/ft_instruction1.c \
 		command/ft_instruction2.c \

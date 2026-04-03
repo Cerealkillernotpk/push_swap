@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 17:29:29 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/10 16:13:52 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/04/03 15:43:53 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	parse(t_stack **stack_a, char **argv, int argc)
 		free_stack(stack_a);
 		return (1);
 	}
-	if (check_zero(stack_a) == 0)
+	if (verif_duplicate(argv) == 0)
 	{
 		ft_putstr_fd("Error\n", 2);
 		free_stack(stack_a);

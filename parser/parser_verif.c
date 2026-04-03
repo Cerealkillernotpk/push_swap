@@ -6,7 +6,7 @@
 /*   By: adakhama <adakhama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 16:35:28 by adakhama          #+#    #+#             */
-/*   Updated: 2026/01/09 21:17:39 by adakhama         ###   ########.fr       */
+/*   Updated: 2026/04/03 15:50:41 by adakhama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_verif_repetition(char *str, t_stack *stack_a)
 {
+	if (stack_a == NULL)
+		return (1);
 	stack_a = stack_a->next;
 	while (stack_a)
 	{
